@@ -1,0 +1,22 @@
+{
+  "name": "oop",
+  "version": "1.0.0",
+  "description": "examples of inheritance in object oriented programming.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh.git"
+  },
+  "keywords": [
+    "js",
+    "inheritance"
+  ],
+  "author": "Kevin Martín Chinea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh#readme"
+}
