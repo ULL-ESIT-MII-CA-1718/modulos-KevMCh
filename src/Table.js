@@ -1,67 +1,71 @@
-var UnderlinedCell = require("./UnderlinedCell.js").UnderlinedCell;
 var Cell = require("./Cell.js").Cell;
 var RCell = require("./RCell.js").RCell;
+var UnderlinedCell = require("./UnderlinedCell.js").UnderlinedCell;
 
-function rowHeights(rows) {
-  return rows.map(function(row) {
-    return row.reduce(function(max, cell) {
-      return Math.max(max, cell.minHeight());
-    }, 0);
-  });
-}
+class Table {
+  constructor () {}
 
-function colWidths(rows) {
-  return rows[0].map(function(_, i) {
-    return rows.reduce(function(max, row) {
-      return Math.max(max, row[i].minWidth());
-    }, 0);
-  });
-}
-
-function drawTable(rows) {
-  var heights = rowHeights(rows);
-  var widths = colWidths(rows);
-
-  function drawLine(blocks, lineNo) {
-    return blocks.map(function(block) {
-      return block[lineNo];
-    }).join(" ");
+  drawAllTable(data) {
+    return this.drawTable(this.dataTable(data))
   }
 
-  function drawRow(row, rowNum) {
-    var blocks = row.map(function(cell, colNum) {
-      return cell.draw(widths[colNum], heights[rowNum]);
-    });
-    return blocks[0].map(function(_, lineNo) {
-      return drawLine(blocks, lineNo);
-    }).join("\n");
+  drawTable(rows) {
+    var heights = this.rowHeights(rows);
+    var widths = this.colWidths(rows);
+
+    function drawLine(blocks, lineNo) {
+      return blocks.map(function(block) {
+        return block[lineNo];
+      }).join(" ");
+    }
+
+    function drawRow(row, rowNum) {
+      var blocks = row.map(function(cell, colNum) {
+        return cell.draw(widths[colNum], heights[rowNum]);
+      });
+      return blocks[0].map(function(_, lineNo) {
+        return drawLine(blocks, lineNo);
+      }).join("\n");
+    }
+
+    return rows.map(drawRow).join("\n");
   }
 
-  return rows.map(drawRow).join("\n");
-}
-
-function dataTable(data) {
-  var keys = Object.keys(data[0]);
-  var headers = keys.map(function(name) {
-    return new UnderlinedCell(new Cell(name));
-  });
-  var body = data.map(function(row) {
-    return keys.map(function(name) {
-      var value = row[name];
-
-      if (/^\s*[-+]?\d+([.]\d*)?([eE][-+]?\d+)?\s*$/.test(value))
-        return new RCell(String(value));
-      else
-        return new Cell(String(value));
+  dataTable(data) {
+    var keys = Object.keys(data[0]);
+    var headers = keys.map(function(name) {
+      return new UnderlinedCell(new Cell(name));
     });
-  });
-  return [headers].concat(body);
-}
+    var body = data.map(function(row) {
+      return keys.map(function(name) {
+        var value = row[name];
 
-function drawAllTable(data) {
-  return drawTable(dataTable(data));
+        if (/^\s*[-+]?\d+([.]\d*)?([eE][-+]?\d+)?\s*$/.test(value))
+          return new RCell(String(value));
+        else
+          return new Cell(String(value));
+      });
+    });
+    return [headers].concat(body);
+  }
+
+  rowHeights(rows) {
+    return rows.map(function(row) {
+      return row.reduce(function(max, cell) {
+        return Math.max(max, cell.minHeight());
+      }, 0);
+    });
+  }
+
+  colWidths(rows) {
+    return rows[0].map(function(_, i) {
+      return rows.reduce(function(max, row) {
+        return Math.max(max, row[i].minWidth());
+      }, 0);
+    });
+  }
 }
 
 module.exports = {
-  drawAllTable: drawAllTable
+  Table: Table
 }
