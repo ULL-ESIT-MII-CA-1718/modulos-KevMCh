@@ -2,21 +2,13 @@ var TCell = require("t-cell");
 
 class UnderlinedCell extends TCell {
   constructor(inner) {
-    super("");
+    super(inner);
     this.inner = inner;
   }
 
   draw (width, height) {
-    return this.inner.draw(width, height - 1)
-      .concat([this.repeat("-", width)]);
-  }
-
-  minWidth () {
-    return this.inner.minWidth();
-  }
-
-  minHeight () {
-    return this.inner.minHeight() + 1;
+    return this.getContent(width, height)
+            .concat([this.repeat("-", width)]);
   }
 }
 

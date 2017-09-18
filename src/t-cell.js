@@ -4,13 +4,18 @@ class TCell {
   }
 
   draw(width, height) {
+    return this.getContent(width, height);
+  };
+
+  getContent(width, height) {
     var result = [];
     for (var i = 0; i < height; i++) {
       var line = this.text[i] || "";
       result.push(line + this.repeat(" ", width - line.length));
     }
+
     return result;
-  };
+  }
 
   repeat(string, times) {
     var result = "";

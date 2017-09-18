@@ -34,7 +34,7 @@ class DTable {
   dataTable(data) {
     var keys = Object.keys(data[0]);
     var headers = keys.map(function(name) {
-      return new UnderlinedCell(new TCell(name));
+      return new UnderlinedCell(name);
     });
     var body = data.map(function(row) {
       return keys.map(function(name) {

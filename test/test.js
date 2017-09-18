@@ -47,11 +47,10 @@ var widthUnderlinedCell = 5, heightUnderlinedCell = 1;
 
 describe("UnderlinedCell", function() {
   it("Creation of UnderlinedCells", function() {
-    var cell = new TCell(valueUnderlinedCell);
-    var underlinedCell = new UnderlinedCell(cell);
+    var underlinedCell = new UnderlinedCell(valueUnderlinedCell);
 
     assert(widthUnderlinedCell === underlinedCell.minWidth());
-    assert((heightUnderlinedCell + 1) === underlinedCell.minHeight());
+    assert(heightUnderlinedCell === underlinedCell.minHeight());
     assert(
       JSON.stringify(underlinedCell.draw(underlinedCell.minWidth(), underlinedCell.minHeight())) ==
       JSON.stringify(expectedUnderlinedCell)
