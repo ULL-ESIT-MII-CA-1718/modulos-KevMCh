@@ -1,10 +1,10 @@
 var should = require('should');
 var assert = require('better-assert');
 
-var Cell = require("../src/Cell.js").Cell;
-var RCell = require("../src/RCell.js").RCell;
-var UnderlinedCell = require("../src/UnderlinedCell.js").UnderlinedCell;
-var Table = require("../src/Table.js").Table;
+var TCell = require("t-cell");
+var RCell = require("r-cell");
+var UnderlinedCell = require("underlined-cell");
+var Table = require("d-table");
 
 /**********************/
 /*        Cell        */
@@ -16,7 +16,7 @@ var widthCell = 6, heightCell = 4;
 
 describe("Cell", function() {
   it("Creation of Cells", function() {
-    var cell = new Cell(valueCell);
+    var cell = new TCell(valueCell);
 
     assert(widthCell === cell.minWidth());
     assert(heightCell === cell.minHeight());
@@ -32,7 +32,7 @@ describe("RCell", function() {
   it("Creation of RCells", function() {
     var rCell = new RCell(valueCell);
 
-    should(rCell instanceof Cell).be.exactly(true);
+    should(rCell instanceof TCell).be.exactly(true);
     should(rCell instanceof RCell).be.exactly(true);
   })
 });
@@ -47,7 +47,7 @@ var widthUnderlinedCell = 5, heightUnderlinedCell = 1;
 
 describe("UnderlinedCell", function() {
   it("Creation of UnderlinedCells", function() {
-    var cell = new Cell(valueUnderlinedCell);
+    var cell = new TCell(valueUnderlinedCell);
     var underlinedCell = new UnderlinedCell(cell);
 
     assert(widthUnderlinedCell === underlinedCell.minWidth());
@@ -71,7 +71,7 @@ function checkerboard() {
   for (var i = 0; i < 5; i++) {
      var row = [];
      for (var j = 0; j < 5; j++) {
-       row.push(new Cell(((j+i)%2)? " " : "##"));
+       row.push(new TCell(((j+i)%2)? " " : "##"));
      }
      rows.push(row);
   }

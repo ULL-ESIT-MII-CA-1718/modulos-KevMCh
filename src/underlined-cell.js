@@ -1,6 +1,6 @@
-var Cell = require("./Cell.js").Cell;
+var TCell = require("t-cell");
 
-class UnderlinedCell extends Cell {
+class UnderlinedCell extends TCell {
   constructor(inner) {
     super("");
     this.inner = inner;
@@ -20,6 +20,4 @@ class UnderlinedCell extends Cell {
   }
 }
 
-module.exports = {
-  UnderlinedCell: UnderlinedCell
-}
+module.exports = UnderlinedCell

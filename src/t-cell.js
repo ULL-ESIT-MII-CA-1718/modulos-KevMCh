@@ -1,4 +1,4 @@
-class Cell {
+class TCell {
   constructor(text) {
     this.text = text.split("\n");
   }
@@ -30,6 +30,4 @@ class Cell {
   };
 }
 
-module.exports = {
-  Cell: Cell
-}
+module.exports = TCell
