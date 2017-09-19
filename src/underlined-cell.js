@@ -8,7 +8,7 @@ class UnderlinedCell extends TCell {
 
   draw (width, height) {
     return this.getContent(width, height)
-            .concat([this.repeat("-", width)]);
+            .concat(["-".repeat(width)]);
   }
 }
 

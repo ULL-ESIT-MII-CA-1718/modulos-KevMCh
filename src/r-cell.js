@@ -9,7 +9,7 @@ class RCell extends TCell {
     var result = [];
     for (var i = 0; i < height; i++) {
       var line = this.text[i] || "";
-      result.push(this.repeat(" ", width - line.length) + line);
+      result.push(" ".repeat(width - line.length) + line);
     }
     return result;
   }
