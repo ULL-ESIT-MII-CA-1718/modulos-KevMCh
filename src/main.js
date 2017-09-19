@@ -1,7 +1,7 @@
-var input = require("./input.json");
-var Table = require("./Table.js").Table;
+var input = require("input.json");
+var DTable = require("d-table");
 
 debugger;
 
-var table = new Table();
+var table = new DTable();
 console.log(table.drawAllTable(input));

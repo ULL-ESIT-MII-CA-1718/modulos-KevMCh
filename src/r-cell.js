@@ -1,6 +1,6 @@
-var Cell = require("./Cell.js").Cell;
+var TCell = require("t-cell");
 
-class RCell extends Cell {
+class RCell extends TCell {
   constructor(text) {
     super(text);
   }
@@ -9,12 +9,10 @@ class RCell extends Cell {
     var result = [];
     for (var i = 0; i < height; i++) {
       var line = this.text[i] || "";
-      result.push(this.repeat(" ", width - line.length) + line);
+      result.push(" ".repeat(width - line.length) + line);
     }
     return result;
   }
 }
 
-module.exports = {
-  RCell: RCell
-}
+module.exports = RCell

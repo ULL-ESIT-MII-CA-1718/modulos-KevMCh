@@ -1,8 +1,8 @@
-var Cell = require("./Cell.js").Cell;
-var RCell = require("./RCell.js").RCell;
-var UnderlinedCell = require("./UnderlinedCell.js").UnderlinedCell;
+var TCell = require("t-cell");
+var RCell = require("r-cell");
+var UnderlinedCell = require("underlined-cell");
 
-class Table {
+class DTable {
   constructor () {}
 
   drawAllTable(data) {
@@ -34,7 +34,7 @@ class Table {
   dataTable(data) {
     var keys = Object.keys(data[0]);
     var headers = keys.map(function(name) {
-      return new UnderlinedCell(new Cell(name));
+      return new UnderlinedCell(name);
     });
     var body = data.map(function(row) {
       return keys.map(function(name) {
@@ -43,7 +43,7 @@ class Table {
         if (/^\s*[-+]?\d+([.]\d*)?([eE][-+]?\d+)?\s*$/.test(value))
           return new RCell(String(value));
         else
-          return new Cell(String(value));
+          return new TCell(String(value));
       });
     });
     return [headers].concat(body);
@@ -66,6 +66,4 @@ class Table {
   }
 }
 
-module.exports = {
-  Table: Table
-}
+module.exports = DTable

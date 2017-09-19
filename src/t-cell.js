@@ -1,21 +1,19 @@
-class Cell {
+class TCell {
   constructor(text) {
     this.text = text.split("\n");
   }
 
   draw(width, height) {
+    return this.getContent(width, height);
+  };
+
+  getContent(width, height) {
     var result = [];
     for (var i = 0; i < height; i++) {
       var line = this.text[i] || "";
-      result.push(line + this.repeat(" ", width - line.length));
+      result.push(line + " ".repeat(width - line.length));
     }
-    return result;
-  };
 
-  repeat(string, times) {
-    var result = "";
-    for (var i = 0; i < times; i++)
-      result += string;
     return result;
   }
 
@@ -30,6 +28,4 @@ class Cell {
   };
 }
 
-module.exports = {
-  Cell: Cell
-}
+module.exports = TCell
