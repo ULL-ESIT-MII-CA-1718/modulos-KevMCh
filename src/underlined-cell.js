@@ -3,7 +3,6 @@ var TCell = require("t-cell");
 class UnderlinedCell extends TCell {
   constructor(inner) {
     super(inner);
-    this.inner = inner;
   }
 
   draw (width, height) {
