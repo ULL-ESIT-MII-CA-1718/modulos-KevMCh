@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh#readme",
   "devDependencies": {
     "better-assert": "^1.0.2",
+    "docco": "^0.7.0",
     "documentation": "^5.3.2",
     "gulp": "^3.9.1",
     "gulp-shell": "^0.6.3",

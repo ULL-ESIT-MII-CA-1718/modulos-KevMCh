@@ -15,6 +15,7 @@ gulpfile.js           - test: run mocha tests
                       - run: run the program
                       - documentation: create the documentation (documentation.js)
                       - jsdoc: create the documentation (jsdoc)
+                      - docco: create the documentation (docco)
 
 src                   - source folder
   input.json          - input file
@@ -53,8 +54,9 @@ If you want to run the code the different tasks is available in the gulp file.
   * Run the program with the debugger.
   * Run the program with the standard input.
   * Run the tests.
-  * Create the documentation with the documentation.js module
+  * Create the documentation with the documentation.js module.
   * Create the documentation with the jsdoc module.
+  * Create the documentation with the docco module.
 
 **Final result:**
 ```javascript

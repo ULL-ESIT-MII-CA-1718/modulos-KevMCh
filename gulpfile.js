@@ -15,3 +15,4 @@ gulp.task("test", shell.task("NODE_PATH=./src ./node_modules/mocha/bin/mocha --r
 
 gulp.task("documentation", shell.task("./node_modules/documentation/bin/documentation.js build src/** -f html -o documentation"));
 gulp.task("jsdoc", shell.task("./node_modules/jsdoc/jsdoc.js src/* -d jsdoc"));
+gulp.task("docco", shell.task("./node_modules/docco/bin/docco src/* -o docco"));
