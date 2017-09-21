@@ -1,6 +1,6 @@
 {
-  "name": "oop",
-  "version": "1.0.0",
+  "name": "@kevmch/oop",
+  "version": "2.0.0",
   "description": "examples of inheritance in object oriented programming.",
   "scripts": {
     "test": "mocha"
@@ -26,8 +26,11 @@
     "mocha": "^3.5.3",
     "should": "^13.0.1"
   },
-
   "engines": {
     "node": ">= 6.x"
+  },
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
   }
 }
