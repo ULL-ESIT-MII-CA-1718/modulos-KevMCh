@@ -2,13 +2,25 @@ var TCell = require("t-cell");
 var RCell = require("r-cell");
 var UnderlinedCell = require("underlined-cell");
 
+/**
+ * DTable Class.
+ */
 class DTable {
   constructor () {}
 
+  /**
+   * Draw the complete table.
+   * @param {json} input json table
+   */
   drawAllTable(data) {
     return this.drawTable(this.dataTable(data))
   }
 
+  /**
+   * Draw the content of the table.
+   * @param {string} input list of rows of the table.
+   * @returns {string} rows of table.
+   */
   drawTable(rows) {
     var heights = this.rowHeights(rows);
     var widths = this.colWidths(rows);
@@ -31,6 +43,11 @@ class DTable {
     return rows.map(drawRow).join("\n");
   }
 
+  /**
+   * Parse the input json.
+   * @param {json} input data in json format
+   * @returns {array} all data.
+   */
   dataTable(data) {
     var keys = Object.keys(data[0]);
     var headers = keys.map(function(name) {
@@ -49,6 +66,11 @@ class DTable {
     return [headers].concat(body);
   }
 
+  /**
+   * Get the heights of rows.
+   * @param {array} input rows
+   * @returns {number} heights of the rows.
+   */
   rowHeights(rows) {
     return rows.map(function(row) {
       return row.reduce(function(max, cell) {
@@ -57,6 +79,11 @@ class DTable {
     });
   }
 
+  /**
+   * Get the widths of rows.
+   * @param {array} input rows
+   * @returns {number} widths of the rows.
+   */
   colWidths(rows) {
     return rows[0].map(function(_, i) {
       return rows.reduce(function(max, row) {
