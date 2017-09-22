@@ -1,6 +1,6 @@
 ## Eloquent JavaScript. Chapter 6: The Secret Life of Objects.  Section *Laying out a table*
 
-[![Build Status](https://travis-ci.org/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh.svg?branch=master)](https://travis-ci.org/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh)
+[![Build Status](https://travis-ci.org/ULL-ESIT-MII-CA-1718/modulos-KevMCh.svg?branch=master)](https://travis-ci.org/ULL-ESIT-MII-CA-1718/modulos-KevMCh)
 [![npm version](https://badge.fury.io/js/%40kevmch%2Foop.svg)](https://badge.fury.io/js/%40kevmch%2Foop)
 
 #### Introduction
