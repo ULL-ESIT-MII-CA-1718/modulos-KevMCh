@@ -1,6 +1,6 @@
-var TCell = require("t-cell");
-var RCell = require("r-cell");
-var UnderlinedCell = require("underlined-cell");
+var TCell = require("./t-cell");
+var RCell = require("./r-cell");
+var UnderlinedCell = require("./underlined-cell");
 
 /**
  * DTable Class.

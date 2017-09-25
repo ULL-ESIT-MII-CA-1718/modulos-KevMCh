@@ -1,10 +1,10 @@
 var should = require('should');
 var assert = require('better-assert');
 
-var TCell = require("t-cell");
-var RCell = require("r-cell");
-var UnderlinedCell = require("underlined-cell");
-var Table = require("d-table");
+var TCell = require("../src/t-cell");
+var RCell = require("../src/r-cell");
+var UnderlinedCell = require("../src/underlined-cell");
+var Table = require("../src/d-table");
 
 /**********************/
 /*        Cell        */

@@ -1,4 +1,4 @@
-var TCell = require("t-cell");
+var TCell = require("./t-cell");
 
 /**
  * UnderlinedCell Class.

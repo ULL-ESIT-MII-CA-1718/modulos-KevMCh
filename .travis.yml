@@ -1,5 +1,3 @@
 language: node_js
 node_js:
   - "node"
-before_script:
-  - export NODE_PATH=./src
