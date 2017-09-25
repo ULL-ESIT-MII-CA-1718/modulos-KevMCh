@@ -1,13 +1,13 @@
 {
   "name": "@kevmch/oop",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "description": "examples of inheritance in object oriented programming.",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh.git"
+    "url": "git+https://github.com/ULL-ESIT-MII-CA-1718/modulos-KevMCh.git"
   },
   "keywords": [
     "js",
@@ -16,9 +16,9 @@
   "author": "Kevin Martín Chinea",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh/issues"
+    "url": "https://github.com/ULL-ESIT-MII-CA-1718/modulos-KevMCh/issues"
   },
-  "homepage": "https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter-6-oop-KevMCh#readme",
+  "homepage": "https://github.com/ULL-ESIT-MII-CA-1718/modulos-KevMCh#readme",
   "devDependencies": {
     "better-assert": "^1.0.2",
     "docco": "^0.7.0",
