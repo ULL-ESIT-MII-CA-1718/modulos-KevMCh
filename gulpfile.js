@@ -3,7 +3,7 @@ var shell = require('gulp-shell');
 
 gulp.task("default", ["test"]);
 
-gulp.task("run", shell.task('node ./src/main.js'));
+gulp.task("run", shell.task('node ./examples/main.js'));
 
 /*
 En versiones v8.*  chrome://inspect en el navegador

@@ -2,7 +2,7 @@
  * Main program
  */
 var input = require("./input.json");
-var DTable = require("./d-table");
+var DTable = require("../src/d-table");
 
 debugger;
 
