@@ -32,11 +32,22 @@ test                  - mocha test
 #### Description
 This example consist in a program that, given an array of arrays of table cells in json format, builds up a string that contains a nicely laid out table.
 
-The *src* folder has the input file and the different classes, the main, all types of cell and the table. Also, in the *test* folder has the file the file with the developed tests.
+The *src* folder has the different classes, all types of cell and the table. The *test* folder has the file the file with the developed tests, and in the *examples* folder has the input file and a main program.
+
+#### Usage
+
+**Installation**
+
+To install the module it is necessary to execute the following command.
+```shell
+$ npm install @kevmch/oop
+```
+
+The module exports a table class and can be used by creating an instance of this. The instance uses a json array like the following.
 
 **Example of input used:**
 ```javascript
-~/ejs-chapter-6-oop-KevMCh $ cat src/input.json
+~/modulos-KevMCh $ cat src/input.json
 
 [
   {"name": "Kilimanjaro\nMontaña mágica", "height": 5895, "country": "Tanzania"},
@@ -49,7 +60,18 @@ The *src* folder has the input file and the different classes, the main, all typ
 ]
 ```
 
-If you want to run the code the different tasks is available in the gulp file.
+Usage mode is as follows.
+```javascript
+var input = require("./input.json");
+var DTable = require("@kevmch/oop");
+
+var table = new DTable();
+console.log(table.drawAllTable(input));
+```
+
+**Gulp tasks:**
+
+If you want to test the code the different tasks is available in the gulp file.
 
   * Run the program with the debugger.
   * Run the program with the standard input.
@@ -58,10 +80,10 @@ If you want to run the code the different tasks is available in the gulp file.
   * Create the documentation with the jsdoc module.
   * Create the documentation with the docco module.
 
-**Final result:**
+**Example:**
 ```javascript
-~/ejs-chapter-6-oop-KevMCh $ gulp run
-[12:42:05] Using gulpfile ~/Desktop/ejs-chapter-6-oop-KevMCh/gulpfile.js
+~/modulos-KevMCh $ gulp run
+[12:42:05] Using gulpfile ~/modulos-KevMCh/gulpfile.js
 [12:42:05] Starting 'run'...
 name           height country      
 -------------- ------ -------------
